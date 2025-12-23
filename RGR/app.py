@@ -406,21 +406,12 @@ class ASRApp(tk.Tk):
 
 
 if __name__ == "__main__":
-    print("=" * 50)
-    print("ASR Демо - Распознавание русских слов (ФАЙЛОВЫЙ РЕЖИМ)")
-    print(f"Устройство: {DEVICE}")
-    print("Словарь: " + ", ".join(checkpoint["alphabet"]))
-    print("Записи сохраняются в папку: live_recordings/")
-    print("=" * 50)
-    
-    # Проверяем устройства записи
+
     try:
         print("Текущее устройство ввода:")
         print(sd.query_devices(sd.default.device[0], "input"))
     except:
         print("Не удалось получить информацию об устройстве ввода")
-    
-    print("=" * 50)
-    
+        
     app = ASRApp()
     app.mainloop()
